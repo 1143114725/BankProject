@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_root"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/bank_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="北京银行"
+        app:layout_constraintStart_toEndOf="@id/bank_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/invoice_amount_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="账单金额"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bank_icon"
+        app:layout_constraintRight_toLeftOf="@+id/invoice_amount_num"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/invoice_amount_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/invoice_amount_text"
+        app:layout_constraintRight_toLeftOf="@+id/all_repayment"
+        app:layout_constraintTop_toTopOf="@+id/invoice_amount_text" />
+
+    <TextView
+        android:id="@+id/all_repayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="立即还款"
+        android:gravity="center"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/invoice_amount_num"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/invoice_amount_num" />
+
+
+    <TextView
+        android:id="@+id/minimum_repayment_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="最低还款"
+        app:layout_constraintEnd_toStartOf="@+id/minimum_repayment_num"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/bank_icon"
+        app:layout_constraintTop_toBottomOf="@+id/invoice_amount_text" />
+
+    <TextView
+        android:id="@+id/minimum_repayment_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        app:layout_constraintEnd_toStartOf="@+id/see_details"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/minimum_repayment_text"
+        app:layout_constraintTop_toTopOf="@+id/minimum_repayment_text" />
+
+    <TextView
+        android:id="@+id/see_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="查看详情"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/minimum_repayment_num"
+        app:layout_constraintTop_toTopOf="@+id/minimum_repayment_num" />
+
+
+    <TextView
+        android:id="@+id/minimum_data_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="最后还款日期"
+        app:layout_constraintEnd_toStartOf="@+id/mini_data_num"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/bank_icon"
+        app:layout_constraintTop_toBottomOf="@+id/minimum_repayment_text" />
+
+    <TextView
+        android:id="@+id/mini_data_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/minimum_data_text"
+        app:layout_constraintTop_toTopOf="@+id/minimum_data_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
