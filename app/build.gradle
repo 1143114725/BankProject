@@ -30,6 +30,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [AROUTER_MODULE_NAME :project.getName() ]
+
+            } }
     }
 
     buildTypes {
@@ -61,5 +69,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.5.0'
 
     implementation 'org.greenrobot:greendao:3.3.0'
+
+    implementation 'com.tencent:mmkv:1.1.1'
+
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
 
 }
