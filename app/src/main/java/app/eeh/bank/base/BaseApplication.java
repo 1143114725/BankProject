@@ -2,7 +2,9 @@ package app.eeh.bank.base;
 
 import android.app.Application;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.RxTool;
+import com.tencent.mmkv.MMKV;
 
 
 /**
@@ -20,10 +22,13 @@ public class BaseApplication extends Application {
      */
     private static BaseApplication mInstance;
 
-    public synchronized static BaseApplication getInstance() {
-
+    public static BaseApplication getInstance() {
         if (mInstance == null) {
-            mInstance = new BaseApplication();
+            synchronized (BaseApplication.class) {
+                if (mInstance == null) {
+                    mInstance = new BaseApplication();
+                }
+            }
         }
         return mInstance;
     }
@@ -35,18 +40,18 @@ public class BaseApplication extends Application {
         RxTool.init(this);
 //        //xutils初始化
 //        x.Ext.init(this);
-//        //ARouter初始化
-//        // 这两行必须写在init之前，否则这些配置在init过程中将无效
-//            ARouter.openLog();     // 打印日志
-//            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
-//        ARouter.init(BaseApplication.this);
+        //ARouter初始化
+        // 这两行必须写在init之前，否则这些配置在init过程中将无效
+            ARouter.openLog();     // 打印日志
+            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        ARouter.init(BaseApplication.this);
 //        // 初始化MultiDex
 //        MultiDex.install(this);
 //
 //        //测试阶段建议设置成true，发布时设置为false。
 //        CrashReport.initCrashReport(getApplicationContext(), "6f8a3fec40", true);
-//        //MMKV初始化
-//        String rootDir = MMKV.initialize(this);
+        //MMKV初始化
+        String rootDir = MMKV.initialize(this);
 //        RxLogTool.v("rootDir:" + rootDir);
     }
 }
