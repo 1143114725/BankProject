@@ -7,7 +7,7 @@ import app.eeh.bank.db.table.Student
 import org.greenrobot.greendao.query.WhereCondition
 
 /**
- *
+ * 数据库操作文件
  * @author EraJieZhang
  * @data 2020/11/17
  */

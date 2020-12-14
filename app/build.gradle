@@ -70,7 +70,7 @@ dependencies {
 
     implementation 'org.greenrobot:greendao:3.3.0'
 
-    implementation 'com.tencent:mmkv:1.1.1'
+    implementation 'com.tencent:mmkv:1.2.6'
 
     implementation 'com.alibaba:arouter-api:1.4.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
