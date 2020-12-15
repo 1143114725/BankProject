@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
+ * 圆角图片ImageView
  * @author EraJieZhang
  * @data 2020/11/26
  */

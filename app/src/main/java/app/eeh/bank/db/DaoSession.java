@@ -8,6 +8,12 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
+<<<<<<< HEAD
+=======
+import java.util.Map;
+
+import app.eeh.bank.db.table.BankCard;
+>>>>>>> a490cbf1ee4aabb3d310c348daac41711da6bbcf
 import app.eeh.bank.db.table.Student;
 
 import app.eeh.bank.db.StudentDao;
@@ -21,24 +27,36 @@ import app.eeh.bank.db.StudentDao;
  */
 public class DaoSession extends AbstractDaoSession {
 
+    private final DaoConfig bankCardDaoConfig;
     private final DaoConfig studentDaoConfig;
 
+    private final BankCardDao bankCardDao;
     private final StudentDao studentDao;
 
     public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
 
+        bankCardDaoConfig = daoConfigMap.get(BankCardDao.class).clone();
+        bankCardDaoConfig.initIdentityScope(type);
+
         studentDaoConfig = daoConfigMap.get(StudentDao.class).clone();
         studentDaoConfig.initIdentityScope(type);
 
+        bankCardDao = new BankCardDao(bankCardDaoConfig, this);
         studentDao = new StudentDao(studentDaoConfig, this);
 
+        registerDao(BankCard.class, bankCardDao);
         registerDao(Student.class, studentDao);
     }
     
     public void clear() {
+        bankCardDaoConfig.clearIdentityScope();
         studentDaoConfig.clearIdentityScope();
+    }
+
+    public BankCardDao getBankCardDao() {
+        return bankCardDao;
     }
 
     public StudentDao getStudentDao() {
