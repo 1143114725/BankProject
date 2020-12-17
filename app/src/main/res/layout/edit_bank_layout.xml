@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sdfsd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1235456745621232315"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:singleLine="true"
-            android:id="@+id/et_bank_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="银行名称"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bank_name"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+   <androidx.constraintlayout.widget.Barrier
+       android:id="@+id/barrier"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:barrierDirection="end"
+       app:constraint_referenced_ids="name,number"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

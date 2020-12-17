@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.eeh.bank">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.HEADSET_PLUG"/>
+
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
