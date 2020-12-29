@@ -16,5 +16,6 @@ public class TextActivity extends BaseActivity {
 
         RxLogTool.d("1");
         RxLogTool.d("2");
+        RxLogTool.d("3");
     }
 }
