@@ -15,5 +15,6 @@ public class TextActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         RxLogTool.d("1");
+        RxLogTool.d("2");
     }
 }
