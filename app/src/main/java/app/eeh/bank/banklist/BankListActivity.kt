@@ -1,10 +1,12 @@
-package app.eeh.bank
+package app.eeh.bank.banklist
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothProfile
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import app.eeh.bank.R
+import app.eeh.bank.edit.EditBankActivity
 import com.erajie.base.BaseActivity
 import com.erajie.rxutils.RxImageTool
 import com.erajie.rxutils.RxLogTool
@@ -13,7 +15,7 @@ import kotlinx.android.synthetic.main.banklist_layout.*
 
 
 /**
- *银行卡列表页
+ * 银行卡列表页
  * @author EraJieZhang
  * @data 2020/11/16
  */
@@ -32,39 +34,13 @@ class BankListActivity : BaseActivity() {
         bank_list.adapter = bankAdapter
         bankAdapter?.setOnItemClickListener { _, i ->
             RxLogTool.d(mLogTag, "i=$i")
-//            Thread {
-//                val client: BosClient = BosUtils.initBos()
-//                BosUtils.getBookNameFileName(client)
-//            }.start()
-//
-
-//            goToActivity(this,EditBankActivity::class.java)
-            var adapter = BluetoothAdapter.getDefaultAdapter()
-            handleHeadsetStateChange(adapter)
+            goToActivity(this, EditBankActivity::class.java)
         }
     }
 
     private fun setdata() {
         for (i in 1 until 10) {
             mList.add("")
-
-        }
-    }
-
-
-
-    private fun handleHeadsetStateChange(adapter:BluetoothAdapter) {
-        val intent = Intent(Intent.ACTION_HEADSET_PLUG)
-        if (BluetoothProfile.STATE_CONNECTED == adapter.getProfileConnectionState(BluetoothProfile.HEADSET)) {
-            intent.putExtra("state", 1)
-            intent.putExtra("microphone", 1)
-            this.sendBroadcast(intent)
-        } else if (BluetoothProfile.STATE_DISCONNECTED == adapter.getProfileConnectionState(
-                BluetoothProfile.HEADSET
-            )
-        ) {
-            intent.putExtra("state", -1)
-            this.sendBroadcast(intent)
         }
     }
 }

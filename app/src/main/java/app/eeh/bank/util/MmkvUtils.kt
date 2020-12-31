@@ -1,9 +1,7 @@
 package app.eeh.bank.util
 
-import android.os.Parcelable
 import app.eeh.bank.util.MmkvUtils.Companion.mv
 import com.tencent.mmkv.MMKV
-import java.util.*
 
 
 /**
@@ -23,8 +21,6 @@ class MmkvUtils {
             }
             return EnCodeMMKV()
         }
-
-
 
     }
 }

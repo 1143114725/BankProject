@@ -1,6 +1,7 @@
-package app.eeh.bank
+package app.eeh.bank.banklist
 
 import android.content.Context
+import app.eeh.bank.R
 import com.erajie.base.BaseRecyclerAdapter
 import com.erajie.base.RecyclerViewHolder
 
