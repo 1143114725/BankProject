@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">RxUtils</string>
+    <string name="app_name">Bank</string>
+    <!-- 信用卡相关String -->
+    <string name="string_bank_name">银行名</string>
+    <string name="string_card_number">卡号</string>
+    <string name="string_max_lines">最大额度</string>
+    <string name="string_now_debt">本月欠款</string>
+    <string name="string_has_bill">已出账单</string>
+    <string name="string_negtive_bill">未出账单</string>
+    <string name="string_min_lines">本期最低还款金额</string>
+    <string name="string_billing_data">账单日</string>
+    <string name="string_pay_back_data">还款日</string>
+    <string name="string_card_holder">持卡人</string>
+    <string name="string_safe_code">安全码</string>
+    <string name="string_effective_data">有效日期</string>
+    <string name="string_annual_fee_rules">年费规则</string>
+
+    <!-- 银行卡相关String -->
+
+    <!-- 个人信息相关String -->
+
 </resources>

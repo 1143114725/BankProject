@@ -4,31 +4,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/bankName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sdfsd"
+        android:layout_margin="@dimen/dp_10"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
     <TextView
-        android:id="@+id/number"
+        android:id="@+id/cardNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1235456745621232315"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/bankName"
         app:layout_constraintStart_toStartOf="parent"/>
-
-
-
+    <TextView
+        android:id="@+id/maxLines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/billingData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/maxLines"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/payBackData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/billingData"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/annualFeeRules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/payBackData"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/cardholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/annualFeeRules"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/safeCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/cardholder"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/effectiveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/safeCode"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/nowDebt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/effectiveData"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/nowDebt"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/hasBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/enable"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/negtiveBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/hasBill"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/minLines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qwe"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/negtiveBill"
+        app:layout_constraintStart_toStartOf="parent"/>
 
    <androidx.constraintlayout.widget.Barrier
        android:id="@+id/barrier"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:barrierDirection="end"
-       app:constraint_referenced_ids="name,number"/>
+       app:constraint_referenced_ids="bankName,cardNumber,maxLines,billingData,payBackData,
+       annualFeeRules,cardholder,safeCode,effectiveData,nowDebt,enable,hasBill,negtiveBill,minLines," />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

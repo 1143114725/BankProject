@@ -1,12 +1,10 @@
 package app.eeh.bank.banklist
 
-import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothProfile
-import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.eeh.bank.R
 import app.eeh.bank.edit.EditBankActivity
+import app.eeh.bank.util.AppRTCBluetoothManager
 import com.erajie.base.BaseActivity
 import com.erajie.rxutils.RxImageTool
 import com.erajie.rxutils.RxLogTool
@@ -24,6 +22,7 @@ class BankListActivity : BaseActivity() {
     private val mLogTag: String = "BankListActivity"
     private var bankAdapter: BankAdapter? = null
     private var mList: ArrayList<String> = ArrayList()
+    var manager :AppRTCBluetoothManager? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.banklist_layout)
@@ -35,6 +34,8 @@ class BankListActivity : BaseActivity() {
         bankAdapter?.setOnItemClickListener { _, i ->
             RxLogTool.d(mLogTag, "i=$i")
             goToActivity(this, EditBankActivity::class.java)
+            manager = AppRTCBluetoothManager.create(this)
+            manager?.start()
         }
     }
 
@@ -42,5 +43,10 @@ class BankListActivity : BaseActivity() {
         for (i in 1 until 10) {
             mList.add("")
         }
+    }
+
+    override fun onDestroy() {
+        manager?.stop()
+        super.onDestroy()
     }
 }
