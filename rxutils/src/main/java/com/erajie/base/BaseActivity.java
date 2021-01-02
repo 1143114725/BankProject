@@ -65,7 +65,28 @@ public abstract class BaseActivity extends FragmentActivity {
 //        //设置状态栏颜色
 //        window.setStatusBarColor(getResources().getColor(R.color.label_link_color,null));
 
+        setLayout();
+        initView();
+        initData();
+        setListeneer();
     }
+    /**
+     * 设置布局
+     */
+    protected abstract void setLayout();
+    /**
+     * 初始化布局
+     */
+    protected abstract void initView();
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
+
+    /**
+     * 设置点击事件
+     */
+    protected abstract void setListeneer();
 
     private int getStatusBarHeight() {
         Resources resources = mActivity.getResources();

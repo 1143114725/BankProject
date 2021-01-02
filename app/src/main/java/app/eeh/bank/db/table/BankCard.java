@@ -19,39 +19,80 @@ public class BankCard {
     /**
      * 银行卡号
      */
-    private String bankNumber;
+    private int bankNumber;
     /**
-     * 账单金额
+     * 最大额度
      */
-    private String amountNum;
+    private int maxLines;
     /**
-     * 最低还款
+     * 账单日
      */
-    private String miniNum;
+    private String billingData;
     /**
-     * 最后还款日期
+     * 还款日
      */
-    private String miniData;
+    private String payBackData;
     /**
-     * 已还金额
+     * 持卡人
      */
-    private String repayment;
+    private String cardHolder;
     /**
-     * 还款日期
+     * 安全码
      */
-    private String repaymentData;
-    @Generated(hash = 733405650)
-    public BankCard(Long id, String bankName, String bankNumber, String amountNum,
-            String miniNum, String miniData, String repayment,
-            String repaymentData) {
+    private int safeCode;
+    /**
+     * 有效日期
+     */
+    private String effectiveData;
+    /**
+     * 年费规则
+     */
+    private String annualFeeRules;
+    /**
+     * 本月欠款
+     */
+    private int nowDebt;
+    /**
+     * 已出账单
+     */
+    private int hasBill;
+    /**
+     * 未出账单
+     */
+    private int negtiveBill;
+    /**
+     * 本期最低还款金额
+     */
+    private int minLines;
+    /**
+     * 是否可用 0 不可用 1 可用
+     */
+    private int enable;
+    /**
+     * 绑定用户id
+     */
+    private int userId;
+    @Generated(hash = 983152163)
+    public BankCard(Long id, String bankName, int bankNumber, int maxLines,
+            String billingData, String payBackData, String cardHolder, int safeCode,
+            String effectiveData, String annualFeeRules, int nowDebt, int hasBill,
+            int negtiveBill, int minLines, int enable, int userId) {
         this.id = id;
         this.bankName = bankName;
         this.bankNumber = bankNumber;
-        this.amountNum = amountNum;
-        this.miniNum = miniNum;
-        this.miniData = miniData;
-        this.repayment = repayment;
-        this.repaymentData = repaymentData;
+        this.maxLines = maxLines;
+        this.billingData = billingData;
+        this.payBackData = payBackData;
+        this.cardHolder = cardHolder;
+        this.safeCode = safeCode;
+        this.effectiveData = effectiveData;
+        this.annualFeeRules = annualFeeRules;
+        this.nowDebt = nowDebt;
+        this.hasBill = hasBill;
+        this.negtiveBill = negtiveBill;
+        this.minLines = minLines;
+        this.enable = enable;
+        this.userId = userId;
     }
     @Generated(hash = 1025789730)
     public BankCard() {
@@ -68,43 +109,89 @@ public class BankCard {
     public void setBankName(String bankName) {
         this.bankName = bankName;
     }
-    public String getBankNumber() {
+    public int getBankNumber() {
         return this.bankNumber;
     }
-    public void setBankNumber(String bankNumber) {
+    public void setBankNumber(int bankNumber) {
         this.bankNumber = bankNumber;
     }
-    public String getAmountNum() {
-        return this.amountNum;
+    public int getMaxLines() {
+        return this.maxLines;
     }
-    public void setAmountNum(String amountNum) {
-        this.amountNum = amountNum;
+    public void setMaxLines(int maxLines) {
+        this.maxLines = maxLines;
     }
-    public String getMiniNum() {
-        return this.miniNum;
+    public String getBillingData() {
+        return this.billingData;
     }
-    public void setMiniNum(String miniNum) {
-        this.miniNum = miniNum;
+    public void setBillingData(String billingData) {
+        this.billingData = billingData;
     }
-    public String getMiniData() {
-        return this.miniData;
+    public String getPayBackData() {
+        return this.payBackData;
     }
-    public void setMiniData(String miniData) {
-        this.miniData = miniData;
+    public void setPayBackData(String payBackData) {
+        this.payBackData = payBackData;
     }
-    public String getRepayment() {
-        return this.repayment;
+    public String getCardHolder() {
+        return this.cardHolder;
     }
-    public void setRepayment(String repayment) {
-        this.repayment = repayment;
+    public void setCardHolder(String cardHolder) {
+        this.cardHolder = cardHolder;
     }
-    public String getRepaymentData() {
-        return this.repaymentData;
+    public int getSafeCode() {
+        return this.safeCode;
     }
-    public void setRepaymentData(String repaymentData) {
-        this.repaymentData = repaymentData;
+    public void setSafeCode(int safeCode) {
+        this.safeCode = safeCode;
     }
-
-
+    public String getEffectiveData() {
+        return this.effectiveData;
+    }
+    public void setEffectiveData(String effectiveData) {
+        this.effectiveData = effectiveData;
+    }
+    public String getAnnualFeeRules() {
+        return this.annualFeeRules;
+    }
+    public void setAnnualFeeRules(String annualFeeRules) {
+        this.annualFeeRules = annualFeeRules;
+    }
+    public int getNowDebt() {
+        return this.nowDebt;
+    }
+    public void setNowDebt(int nowDebt) {
+        this.nowDebt = nowDebt;
+    }
+    public int getHasBill() {
+        return this.hasBill;
+    }
+    public void setHasBill(int hasBill) {
+        this.hasBill = hasBill;
+    }
+    public int getNegtiveBill() {
+        return this.negtiveBill;
+    }
+    public void setNegtiveBill(int negtiveBill) {
+        this.negtiveBill = negtiveBill;
+    }
+    public int getMinLines() {
+        return this.minLines;
+    }
+    public void setMinLines(int minLines) {
+        this.minLines = minLines;
+    }
+    public int getEnable() {
+        return this.enable;
+    }
+    public void setEnable(int enable) {
+        this.enable = enable;
+    }
+    public int getUserId() {
+        return this.userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
 }

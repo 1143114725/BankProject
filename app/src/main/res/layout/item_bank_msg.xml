@@ -25,6 +25,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tailNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:text="卡号后四位：8888"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
         android:id="@+id/invoice_amount_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,7 +64,6 @@
         app:layout_constraintLeft_toRightOf="@+id/invoice_amount_num"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/invoice_amount_num" />
-
 
     <TextView
         android:id="@+id/minimum_repayment_text"
@@ -88,7 +96,6 @@
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toEndOf="@+id/minimum_repayment_num"
         app:layout_constraintTop_toTopOf="@+id/minimum_repayment_num" />
-
 
     <TextView
         android:id="@+id/minimum_data_text"

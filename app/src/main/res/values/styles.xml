@@ -26,4 +26,23 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <style name="EditBankTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_30</item>
+        <item name="android:textColor">@color/back</item>
+        <item name="android:layout_margin">@dimen/dp_16</item>
+        <item name="android:textSize">@dimen/dp_16</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="EditBankEditText">
+        <item name="android:inputType">text</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_30</item>
+        <item name="android:textColor">@color/back</item>
+        <item name="android:textSize">@dimen/dp_16</item>
+        <item name="android:layout_margin">@dimen/dp_16</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 </resources>

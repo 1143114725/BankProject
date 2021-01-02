@@ -1,128 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/bankName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sdfsd"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/cardNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1235456745621232315"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/bankName"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/maxLines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/cardNumber"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/billingData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/maxLines"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/payBackData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/billingData"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/annualFeeRules"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/payBackData"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/cardholder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/annualFeeRules"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/safeCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/cardholder"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/effectiveData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/safeCode"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/nowDebt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/effectiveData"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/enable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/nowDebt"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/hasBill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/enable"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/negtiveBill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/hasBill"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/minLines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qwe"
-        android:layout_margin="@dimen/dp_10"
-        app:layout_constraintTop_toBottomOf="@+id/negtiveBill"
-        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-   <androidx.constraintlayout.widget.Barrier
-       android:id="@+id/barrier"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:barrierDirection="end"
-       app:constraint_referenced_ids="bankName,cardNumber,maxLines,billingData,payBackData,
-       annualFeeRules,cardholder,safeCode,effectiveData,nowDebt,enable,hasBill,negtiveBill,minLines," />
+        <TextView
+            android:id="@+id/bankName"
+            style="@style/EditBankTextView"
+            android:text="@string/string_bank_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/cardNumber"
+            style="@style/EditBankTextView"
+            android:text="@string/string_card_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bankName" />
+
+        <TextView
+            android:id="@+id/maxLines"
+            style="@style/EditBankTextView"
+            android:text="@string/string_max_lines"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardNumber" />
+
+        <TextView
+            android:id="@+id/billingData"
+            style="@style/EditBankTextView"
+            android:text="@string/string_billing_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/maxLines" />
+
+        <TextView
+            android:id="@+id/payBackData"
+            style="@style/EditBankTextView"
+            android:text="@string/string_pay_back_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billingData" />
+
+        <TextView
+            android:id="@+id/cardholder"
+            style="@style/EditBankTextView"
+            android:text="@string/string_card_holder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payBackData" />
+
+        <TextView
+            android:id="@+id/safeCode"
+            style="@style/EditBankTextView"
+            android:text="@string/string_safe_code"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardholder" />
+
+        <TextView
+            android:id="@+id/effectiveData"
+            style="@style/EditBankTextView"
+            android:text="@string/string_effective_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/safeCode" />
+
+        <TextView
+            android:id="@+id/annualFeeRules"
+            style="@style/EditBankTextView"
+            android:text="@string/string_annual_fee_rules"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/effectiveData" />
+
+        <TextView
+            android:id="@+id/nowDebt"
+            style="@style/EditBankTextView"
+            android:text="@string/string_now_debt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/annualFeeRules" />
+
+        <TextView
+            android:id="@+id/hasBill"
+            style="@style/EditBankTextView"
+            android:text="@string/string_has_bill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowDebt" />
+
+        <TextView
+            android:id="@+id/negtiveBill"
+            style="@style/EditBankTextView"
+            android:text="@string/string_negtive_bill"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hasBill" />
+
+        <TextView
+            android:id="@+id/minLines"
+            style="@style/EditBankTextView"
+
+            android:text="@string/string_min_lines"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/negtiveBill" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="bankName,cardNumber,maxLines,billingData,payBackData,
+       annualFeeRules,cardholder,safeCode,effectiveData,nowDebt,hasBill,negtiveBill,minLines," />
+
+        <EditText
+            android:id="@+id/et_bank_name"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_card_number"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_bank_name" />
+
+        <EditText
+            android:id="@+id/et_max_lines"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_card_number" />
+
+        <EditText
+            android:id="@+id/et_billing_data"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_max_lines" />
+
+        <EditText
+            android:id="@+id/et_pay_back_data"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_billing_data" />
+
+        <EditText
+            android:id="@+id/et_card_holder"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_pay_back_data" />
+
+        <EditText
+            android:id="@+id/et_safe_code"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_card_holder" />
+
+        <EditText
+            android:id="@+id/et_effective_data"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_safe_code" />
+
+        <EditText
+            android:id="@+id/et_annual_fee_rules"
+            style="@style/EditBankEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_effective_data" />
+
+        <EditText
+            android:id="@+id/et_now_debt"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_annual_fee_rules" />
+
+        <EditText
+            android:id="@+id/et_has_bill"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_now_debt" />
+
+        <EditText
+            android:id="@+id/et_negtive_bill"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_has_bill" />
+
+        <EditText
+            android:id="@+id/et_min_lines"
+            style="@style/EditBankEditText"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/et_negtive_bill" />
+        
+        <TextView
+            android:id="@+id/commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_16"
+            android:padding="@dimen/dp_10"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@+id/et_min_lines"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
