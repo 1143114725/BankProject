@@ -4,6 +4,7 @@ import android.text.TextUtils
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
 import com.erajie.base.BaseActivity
+import com.erajie.db.dbhelp.OperationBankCard
 import kotlinx.android.synthetic.main.edit_bank_layout.*
 
 /**
@@ -29,7 +30,7 @@ class EditBankActivity: BaseActivity() {
          * 提交按钮
          */
         commit.setOnClickListener {
-            getCreditCardMsg()
+           var result = getCreditCardMsg()?.let { OperationBankCard.addBankCard(this, it) }
         }
     }
 
