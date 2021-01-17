@@ -8,6 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="cardNumber,cardholder,safeCode,effectiveData,annualFeeRules,
+            et_card_number,et_card_holder,safeCode,et_effective_data,et_annual_fee_rules"/>
+
+
         <TextView
             android:id="@+id/bankName"
             style="@style/EditBankTextView"

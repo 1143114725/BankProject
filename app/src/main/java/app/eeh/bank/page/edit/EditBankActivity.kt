@@ -1,6 +1,7 @@
 package app.eeh.bank.page.edit
 
 import android.text.TextUtils
+import android.view.View
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
 import com.erajie.base.BaseActivity
@@ -64,6 +65,8 @@ class EditBankActivity: BaseActivity() {
      * 设置银行卡信息，并禁止使用edittext
      */
     private fun setCreditCardMsg(bankCard:BankCard){
+        group.visibility = View.GONE
+
         et_bank_name.setText(bankCard.bankName)
         et_card_number.setText(bankCard.bankNumber)
         et_max_lines.setText(bankCard.maxLines)
