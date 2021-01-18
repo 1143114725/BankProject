@@ -1,10 +1,13 @@
-package app.eeh.bank.page.banklist
+package app.eeh.bank.banklist
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
+import app.eeh.bank.page.banklist.BankAdapter
 import app.eeh.bank.page.edit.EditBankActivity
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.erajie.base.BaseActivity
+import com.erajie.global.ARouterPath
 import com.erajie.rxutils.RxImageTool
 import com.erajie.rxutils.RxLogTool
 import com.erajie.util.SpaceItemDecoration
@@ -16,6 +19,7 @@ import kotlinx.android.synthetic.main.banklist_layout.*
  * @author EraJieZhang
  * @data 2020/11/16
  */
+@Route(group = ARouterPath.GROUP_BANK, path = ARouterPath.BankListActivity)
 class BankListActivity : BaseActivity() {
 
     private val mLogTag: String = "BankListActivity"

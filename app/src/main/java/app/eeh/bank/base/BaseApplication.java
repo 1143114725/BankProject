@@ -54,4 +54,10 @@ public class BaseApplication extends Application {
         String rootDir = MMKV.initialize(this);
 //        RxLogTool.v("rootDir:" + rootDir);
     }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        ARouter.getInstance().destroy();
+    }
 }

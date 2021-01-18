@@ -21,12 +21,12 @@ public class LoginInterceptorImpl implements IInterceptor {
 	public void process(Postcard postcard, InterceptorCallback callback) {
 		String path = postcard.getPath();
 		String group = postcard.getGroup();
-		
+
 		RxLogTool.v("process拦截开始-------");
 		RxLogTool.v("path = " + path);
 		RxLogTool.v("group = " + group);
 		RxLogTool.v("process拦截结束-------");
-		
+
 //		2020-01-16 18:15:42.931 31341-1000/com.erajiezhang V/EraJieZhang: path = /activity/ShowClockActivity
 //		2020-01-16 18:15:42.931 31341-1000/com.erajiezhang V/EraJieZhang: group = activity
 //		if ( group.equals("activity") ){
@@ -36,8 +36,8 @@ public class LoginInterceptorImpl implements IInterceptor {
 //		}else{
 			callback.onContinue(postcard);
 //		}
-		
-		
+
+
 	}
 	
 	@Override
