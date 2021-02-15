@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.R;
 
 import java.util.Timer;
@@ -69,6 +70,7 @@ public abstract class BaseActivity extends FragmentActivity {
         initView();
         initData();
         setListeneer();
+        ARouter.getInstance().inject(this);
     }
     /**
      * 设置布局
