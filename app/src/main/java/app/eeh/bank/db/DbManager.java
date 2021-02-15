@@ -104,5 +104,28 @@ public class DbManager {
         }
         return mDaoSession;
     }
+
+    /**
+     * 关闭所有的操作
+     * 注：数据库开启之后，使用完毕必须要关闭
+     */
+    public static void closeConnection() {
+        closeHelper();
+        closeDaoSession();
+    }
+
+    private static void closeHelper() {
+        if (mDevOpenHelper != null) {
+            mDevOpenHelper.close();
+            mDevOpenHelper = null;
+        }
+    }
+
+    private static void closeDaoSession() {
+        if (mDaoSession != null) {
+            mDaoSession.clear();
+            mDaoSession = null;
+        }
+    }
 }
 

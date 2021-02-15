@@ -3,9 +3,7 @@ package com.erajie.db.dbhelp
 import android.content.Context
 import app.eeh.bank.db.BankCardDao
 import app.eeh.bank.db.DbManager
-import app.eeh.bank.db.StudentDao
 import app.eeh.bank.db.table.BankCard
-import app.eeh.bank.db.table.Student
 import org.greenrobot.greendao.query.WhereCondition
 
 /**
@@ -19,14 +17,17 @@ class OperationBankCard {
         /**
          * 添加一条数据
          */
-        fun addBankCard(context: Context,bankCard: BankCard) :Long{
-           return DbManager.getDaoSession(context).bankCardDao.insert(bankCard)
+        fun addBankCard(context: Context, bankCard: BankCard): Long {
+            val result = DbManager.getDaoSession(context).bankCardDao.insert(bankCard)
+            DbManager.closeConnection()
+            return result
         }
 
         /**
          * 根据条件获取数据
          */
         fun getBankCardWhereAge(context: Context, where: WhereCondition):List<BankCard>{
+            DbManager.getDaoSession(context).bankCardDao.detachAll()
             return DbManager.getDaoSession(context).bankCardDao.queryBuilder().where(where).list()
         }
 
@@ -34,7 +35,7 @@ class OperationBankCard {
          * 获取表中全部数据
          */
         fun getBankCard(context: Context):List<BankCard>{
-            return getBankCardWhereAge(context, BankCardDao.Properties.Id.eq(1))
+            return getBankCardWhereAge(context, BankCardDao.Properties.Enable.eq(1))
         }
 
         /**

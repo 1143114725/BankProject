@@ -1,11 +1,13 @@
 package app.eeh.bank.banklist
 
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
 import app.eeh.bank.page.banklist.BankAdapter
 import app.eeh.bank.page.edit.EditBankActivity
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.erajie.arout.BaseArouteUtil
 import com.erajie.base.BaseActivity
 import com.erajie.global.ARouterPath
 import com.erajie.rxutils.RxImageTool
@@ -37,20 +39,33 @@ class BankListActivity : BaseActivity() {
         bank_list.adapter = bankAdapter
         bankAdapter?.setOnItemClickListener { _, i ->
             RxLogTool.d(mLogTag, "i=$i")
-            goToActivity(this, EditBankActivity::class.java)
+//            goToActivity(this, EditBankActivity::class.java)
+            BaseArouteUtil.returnActivity(ARouterPath.EditBankActivity)
         }
     }
 
     override fun initData() {
+//        mList = OperationBankCard.getBankCard(this) as ArrayList<BankCard>
         for (i in 1 until 10) {
             var bankCard = BankCard()
             mList.add(bankCard)
         }
-        bankAdapter?.notifyDataSetChanged()
+        notifyData()
     }
 
     override fun setListeneer() {
 
+    }
+
+    private fun notifyData(){
+        if (mList.isNotEmpty() && mList.size > 0){
+            enable_data.visibility = View.GONE
+            bank_list.visibility = View.VISIBLE
+        }else {
+            enable_data.visibility = View.VISIBLE
+            bank_list.visibility = View.GONE
+        }
+        bankAdapter?.notifyDataSetChanged()
     }
 
 }

@@ -2,6 +2,7 @@ package com.erajie.arout;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxDataTool;
 
 /**
@@ -10,7 +11,7 @@ import com.erajie.rxutils.RxDataTool;
  * @data 2020/1/17
  */
 public class BaseArouteUtil {
-	private static final String defaultgroup = "activity";
+	private static final String defaultgroup = ARouterPath.GROUP_BANK;
 	/**
 	 * 跳转页面-默认组
 	 * @param arouterPath

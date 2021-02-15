@@ -66,11 +66,11 @@ public abstract class BaseActivity extends FragmentActivity {
 //        //设置状态栏颜色
 //        window.setStatusBarColor(getResources().getColor(R.color.label_link_color,null));
 
+        ARouter.getInstance().inject(this);
         setLayout();
         initView();
         initData();
         setListeneer();
-        ARouter.getInstance().inject(this);
     }
     /**
      * 设置布局

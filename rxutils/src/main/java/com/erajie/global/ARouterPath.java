@@ -17,6 +17,10 @@ public class ARouterPath {
 	 */
 	public static final String BankListActivity = "/banklist/BankListActivity";
 	public static final String EditBankActivity = "/banklist/EditBankActivity";
+	public static final String LoginActivity = "/user/LoginActivity";
+//	public static final String RegisterActivity = "/eeh/bank/page/user/RegisterActivity";
+	public static final String RegisterActivity = "/user/RegisterActivity";
+	public static final String UserActivity = "/user/UserActivity";
 
 
 	

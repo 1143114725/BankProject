@@ -9,6 +9,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.erajie.base.BaseActivity
 import com.erajie.db.dbhelp.OperationBankCard
 import com.erajie.global.ARouterPath
+import com.erajie.rxutils.view.RxToast
 import kotlinx.android.synthetic.main.edit_bank_layout.*
 
 /**
@@ -36,7 +37,14 @@ class EditBankActivity: BaseActivity() {
          * 提交按钮
          */
         commit.setOnClickListener {
-           var result = getCreditCardMsg()?.let { OperationBankCard.addBankCard(this, it) }
+            var result = getCreditCardMsg()?.let { OperationBankCard.addBankCard(this, it) }
+            if (result != null) {
+                if (result > 0){
+                    RxToast.success("保存成功！")
+                }
+            }else{
+                RxToast.error("保存失败！")
+            }
         }
     }
 

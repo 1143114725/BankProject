@@ -2,8 +2,13 @@ package app.eeh.bank.page.user
 
 import android.text.TextUtils
 import app.eeh.bank.R
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.erajie.arout.BaseArouteUtil
 import com.erajie.base.BaseActivity
+import com.erajie.db.dbhelp.OperationUser
+import com.erajie.global.ARouterPath
 import com.erajie.rxutils.RxLogTool
+import com.erajie.rxutils.view.RxToast
 import kotlinx.android.synthetic.main.login_layout.*
 
 /**
@@ -11,6 +16,7 @@ import kotlinx.android.synthetic.main.login_layout.*
  * @author EraJieZhang
  * @data 2021-1-17
  */
+@Route(path = ARouterPath.LoginActivity,group = ARouterPath.GROUP_BANK)
 class LoginActivity : BaseActivity() {
 
     override fun setLayout() {
@@ -27,6 +33,9 @@ class LoginActivity : BaseActivity() {
     override fun setListeneer() {
         login.setOnClickListener {
             login()
+        }
+        register.setOnClickListener {
+            BaseArouteUtil.returnActivity(ARouterPath.RegisterActivity)
         }
     }
 
@@ -45,6 +54,11 @@ class LoginActivity : BaseActivity() {
             return
         }
         RxLogTool.i("userName  = $userName  password = $password")
+        val result = OperationUser.doLogin(this,userName.toString(),password.toString() )
+        if (result.isEmpty()){
+            RxToast.error("登录失败！")
+        }
+        RxToast.success("登录成功！")
     }
 
 }

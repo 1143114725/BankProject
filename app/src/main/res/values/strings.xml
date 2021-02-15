@@ -27,5 +27,7 @@
     <string name="string_user_account">账号</string>
     <string name="string_user_changepsd">修改密码</string>
 
+    <string name="string_user_register">注册</string>
+
 
 </resources>
