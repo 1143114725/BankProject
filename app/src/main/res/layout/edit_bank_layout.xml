@@ -121,6 +121,7 @@
         <EditText
             android:id="@+id/et_bank_name"
             style="@style/EditBankEditText"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/barrier"
             app:layout_constraintTop_toTopOf="parent" />
