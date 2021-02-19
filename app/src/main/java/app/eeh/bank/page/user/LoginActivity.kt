@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.login_layout.*
  * @author EraJieZhang
  * @data 2021-1-17
  */
-@Route(path = ARouterPath.LoginActivity,group = ARouterPath.GROUP_BANK)
+@Route(path = ARouterPath.LOGIN_ACTIVITY,group = ARouterPath.GROUP_BANK)
 class LoginActivity : BaseActivity() {
 
     override fun setLayout() {
@@ -35,7 +35,7 @@ class LoginActivity : BaseActivity() {
             login()
         }
         register.setOnClickListener {
-            BaseArouteUtil.returnActivity(ARouterPath.RegisterActivity)
+            BaseArouteUtil.returnActivity(ARouterPath.REGISTER_ACTIVITY)
         }
     }
 
@@ -57,8 +57,10 @@ class LoginActivity : BaseActivity() {
         val result = OperationUser.doLogin(this,userName.toString(),password.toString() )
         if (result.isEmpty()){
             RxToast.error("登录失败！")
+            return
         }
         RxToast.success("登录成功！")
+        BaseArouteUtil.returnActivity(ARouterPath.BANK_LIST_ACTIVITY)
     }
 
 }

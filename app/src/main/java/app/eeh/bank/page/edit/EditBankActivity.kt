@@ -5,7 +5,6 @@ import android.view.View
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.erajie.base.BaseActivity
 import com.erajie.db.dbhelp.OperationBankCard
 import com.erajie.global.ARouterPath
@@ -17,7 +16,7 @@ import kotlinx.android.synthetic.main.edit_bank_layout.*
  * @author EraJieZhang
  * @data 2020-12-12
  */
-@Route(group = ARouterPath.GROUP_BANK,path = ARouterPath.EditBankActivity)
+@Route(group = ARouterPath.GROUP_BANK,path = ARouterPath.EDIT_BANK_ACTIVITY)
 class EditBankActivity: BaseActivity() {
 
     override fun setLayout() {

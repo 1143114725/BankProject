@@ -7,7 +7,7 @@ package com.erajie.global;
  */
 public class ARouterPath {
 	/*********************************Group*******************************************/
-	public static final String GROUP_BANK = "bank";
+	public static final String GROUP_BANK = "BANK";
 
 
 	/*******************************Activity*******************************************/
@@ -15,12 +15,11 @@ public class ARouterPath {
 	/**
 	 * 银行卡
 	 */
-	public static final String BankListActivity = "/banklist/BankListActivity";
-	public static final String EditBankActivity = "/banklist/EditBankActivity";
-	public static final String LoginActivity = "/user/LoginActivity";
-//	public static final String RegisterActivity = "/eeh/bank/page/user/RegisterActivity";
-	public static final String RegisterActivity = "/user/RegisterActivity";
-	public static final String UserActivity = "/user/UserActivity";
+	public static final String BANK_LIST_ACTIVITY = "/banklist/BankListActivity";
+	public static final String EDIT_BANK_ACTIVITY = "/edit/EditBankActivity";
+	public static final String LOGIN_ACTIVITY = "/user/LoginActivity";
+	public static final String REGISTER_ACTIVITY = "/user/RegisterActivity";
+	public static final String USER_ACTIVITY = "/user/UserActivity";
 
 
 	

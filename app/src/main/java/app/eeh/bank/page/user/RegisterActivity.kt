@@ -14,11 +14,12 @@ import kotlinx.android.synthetic.main.register_layout.*
  * @author EraJieZhang
  * @data 2021-2-15
  */
-@Route(path = ARouterPath.RegisterActivity,group = ARouterPath.GROUP_BANK)
+@Route(path = ARouterPath.REGISTER_ACTIVITY,group = ARouterPath.GROUP_BANK)
 class RegisterActivity : BaseActivity() {
     override fun setListeneer() {
         register.setOnClickListener {
             val user = User()
+            user.enable = 1
             user.userId = user_name.text.toString()
             user.passWord = pass_world.text.toString()
             val result = OperationUser.addBankCard(this, user)

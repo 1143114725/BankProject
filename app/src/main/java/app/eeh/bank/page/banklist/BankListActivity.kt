@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import app.eeh.bank.R
 import app.eeh.bank.db.table.BankCard
 import app.eeh.bank.page.banklist.BankAdapter
-import app.eeh.bank.page.edit.EditBankActivity
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.erajie.arout.BaseArouteUtil
 import com.erajie.base.BaseActivity
 import com.erajie.global.ARouterPath
@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.banklist_layout.*
  * @author EraJieZhang
  * @data 2020/11/16
  */
-@Route(group = ARouterPath.GROUP_BANK, path = ARouterPath.BankListActivity)
+@Route(group = ARouterPath.GROUP_BANK, path = ARouterPath.BANK_LIST_ACTIVITY)
 class BankListActivity : BaseActivity() {
 
     private val mLogTag: String = "BankListActivity"
@@ -39,9 +39,9 @@ class BankListActivity : BaseActivity() {
         bank_list.adapter = bankAdapter
         bankAdapter?.setOnItemClickListener { _, i ->
             RxLogTool.d(mLogTag, "i=$i")
-//            goToActivity(this, EditBankActivity::class.java)
-            BaseArouteUtil.returnActivity(ARouterPath.EditBankActivity)
+            BaseArouteUtil.returnActivity(ARouterPath.EDIT_BANK_ACTIVITY)
         }
+
     }
 
     override fun initData() {

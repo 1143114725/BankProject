@@ -10,7 +10,7 @@ import com.erajie.global.ARouterPath
  * @author EraJieZhang
  * @data 2021-1-17
  */
-@Route(group = ARouterPath.GROUP_BANK,path = ARouterPath.UserActivity)
+@Route(group = ARouterPath.GROUP_BANK,path = ARouterPath.USER_ACTIVITY)
 class UserActivity : BaseActivity() {
 
     override fun setListeneer() {

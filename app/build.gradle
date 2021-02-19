@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -32,12 +33,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
-
             annotationProcessorOptions {
-
                 arguments = [AROUTER_MODULE_NAME :project.getName() ]
-
-            } }
+            }
+        }
     }
 
     buildTypes {
@@ -45,6 +44,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
 
@@ -82,5 +87,7 @@ dependencies {
 
     implementation 'com.alibaba:arouter-api:1.4.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+
+    kapt 'com.alibaba:arouter-compiler:1.2.1'
 
 }
