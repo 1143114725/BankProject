@@ -1,2 +1,2 @@
-include ':app', ':RxUtils'
+include ':app', ':RxUtils', ':db'
 rootProject.name = "BankProject"

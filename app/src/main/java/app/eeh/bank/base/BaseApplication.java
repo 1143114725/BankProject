@@ -5,6 +5,7 @@ import android.app.Application;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.RxTool;
 import com.tencent.mmkv.MMKV;
+import com.tools.db.DbTools;
 
 
 /**
@@ -53,6 +54,8 @@ public class BaseApplication extends Application {
         //MMKV初始化
         String rootDir = MMKV.initialize(this);
 //        RxLogTool.v("rootDir:" + rootDir);
+
+        DbTools.Companion.init(this);
     }
 
     @Override

@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tools.db">
+
+    <!-- ObjectBox电脑浏览数据库必备权限，其实就是网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- ObjectBox电脑浏览数据库必备权限，保持持久连接的权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+</manifest>
