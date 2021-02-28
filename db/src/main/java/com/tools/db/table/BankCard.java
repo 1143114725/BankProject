@@ -1,8 +1,8 @@
-package app.eeh.bank.db.table;
+package com.tools.db.table;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Generated;
+
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
 
 /**
  * @author EraJieZhang
@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Generated;
  */
 @Entity
 public class BankCard {
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     /**
      * 银行名
@@ -72,31 +72,7 @@ public class BankCard {
      * 绑定用户id
      */
     private int userId;
-    @Generated(hash = 983152163)
-    public BankCard(Long id, String bankName, int bankNumber, int maxLines,
-            String billingData, String payBackData, String cardHolder, int safeCode,
-            String effectiveData, String annualFeeRules, int nowDebt, int hasBill,
-            int negtiveBill, int minLines, int enable, int userId) {
-        this.id = id;
-        this.bankName = bankName;
-        this.bankNumber = bankNumber;
-        this.maxLines = maxLines;
-        this.billingData = billingData;
-        this.payBackData = payBackData;
-        this.cardHolder = cardHolder;
-        this.safeCode = safeCode;
-        this.effectiveData = effectiveData;
-        this.annualFeeRules = annualFeeRules;
-        this.nowDebt = nowDebt;
-        this.hasBill = hasBill;
-        this.negtiveBill = negtiveBill;
-        this.minLines = minLines;
-        this.enable = enable;
-        this.userId = userId;
-    }
-    @Generated(hash = 1025789730)
-    public BankCard() {
-    }
+
     public Long getId() {
         return this.id;
     }

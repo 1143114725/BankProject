@@ -9,7 +9,6 @@ import com.erajie.db.dbhelp.OperationUser
 import com.erajie.global.ARouterPath
 import com.erajie.rxutils.RxLogTool
 import com.erajie.rxutils.view.RxToast
-import com.tools.db.Test
 import kotlinx.android.synthetic.main.login_layout.*
 
 /**
@@ -36,8 +35,7 @@ class LoginActivity : BaseActivity() {
             login()
         }
         register.setOnClickListener {
-//            BaseArouteUtil.returnActivity(ARouterPath.REGISTER_ACTIVITY)
-            Test.add()
+            BaseArouteUtil.returnActivity(ARouterPath.REGISTER_ACTIVITY)
         }
     }
 
@@ -56,7 +54,7 @@ class LoginActivity : BaseActivity() {
             return
         }
         RxLogTool.i("userName  = $userName  password = $password")
-        val result = OperationUser.doLogin(this,userName.toString(),password.toString() )
+        val result = OperationUser.doLogin(userName.toString(),password.toString() )
         if (result.isEmpty()){
             RxToast.error("登录失败！")
             return

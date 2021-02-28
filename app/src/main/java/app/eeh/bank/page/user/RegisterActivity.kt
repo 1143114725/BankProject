@@ -1,12 +1,12 @@
 package app.eeh.bank.page.user
 
 import app.eeh.bank.R
-import app.eeh.bank.db.table.User
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.erajie.base.BaseActivity
 import com.erajie.db.dbhelp.OperationUser
 import com.erajie.global.ARouterPath
 import com.erajie.rxutils.view.RxToast
+import com.tools.db.table.User
 import kotlinx.android.synthetic.main.register_layout.*
 
 /**
@@ -22,7 +22,7 @@ class RegisterActivity : BaseActivity() {
             user.enable = 1
             user.userId = user_name.text.toString()
             user.passWord = pass_world.text.toString()
-            val result = OperationUser.addBankCard(this, user)
+            val result = OperationUser.addBankCard(user)
             if (result > 0){
                 RxToast.success("注册成功！")
             }else{

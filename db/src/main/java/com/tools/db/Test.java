@@ -12,6 +12,7 @@ public class Test {
             RxToast.error("error!!!");
         }else{
             RxToast.success("SUCCESS!!!");
+
         }
     }
 }

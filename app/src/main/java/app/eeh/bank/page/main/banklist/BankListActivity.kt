@@ -3,16 +3,16 @@ package app.eeh.bank.banklist
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.eeh.bank.R
-import app.eeh.bank.db.table.BankCard
-import app.eeh.bank.page.banklist.BankAdapter
+import app.eeh.bank.page.main.banklist.BankAdapter
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.erajie.arout.BaseArouteUtil
 import com.erajie.base.BaseActivity
+import com.erajie.db.dbhelp.OperationBankCard
 import com.erajie.global.ARouterPath
 import com.erajie.rxutils.RxImageTool
 import com.erajie.rxutils.RxLogTool
 import com.erajie.util.SpaceItemDecoration
+import com.tools.db.table.BankCard
 import kotlinx.android.synthetic.main.banklist_layout.*
 
 
@@ -45,11 +45,7 @@ class BankListActivity : BaseActivity() {
     }
 
     override fun initData() {
-//        mList = OperationBankCard.getBankCard(this) as ArrayList<BankCard>
-        for (i in 1 until 10) {
-            var bankCard = BankCard()
-            mList.add(bankCard)
-        }
+        mList = OperationBankCard.getBankCard() as ArrayList<BankCard>
         notifyData()
     }
 

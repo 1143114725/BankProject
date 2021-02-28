@@ -2,7 +2,6 @@ package com.erajie.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,9 +15,12 @@ import androidx.fragment.app.Fragment;
  * Created by EraJieZhang
  * Fragment基类
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
     private static final String TAG = "BaseFragment";
     protected Activity mActivity;
+    private View rootView;//缓存Fragment view
+    private int resLayoutId;
+
     /**
      *  Fragment与Activity已经完成绑定，该方法有一个Activity类型的参数，代表绑定的Activity,防止内存泄露
      */
@@ -45,10 +47,20 @@ public class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView: ");
+        if (rootView == null) {
+            rootView = inflater.inflate(resLayoutId, null);
+            initView(rootView);
+            setListener();
+            initData();
+        }
+        //缓存的rootView需要判断是否已经被加过parent， 如果有parent需要从parent删除，要不然会发生这个rootview已经有parent的错误。
+        ViewGroup parent = (ViewGroup) rootView.getParent();
+        if (parent != null) {
+            parent.removeView(rootView);
+        }
         return super.onCreateView(inflater, container, savedInstanceState);
+
     }
-
-
 
     /**
      * 执行该方法时，与Fragment绑定的Activity的onCreate方法已经执行完成并返回，在该方法内可以进行与
@@ -121,34 +133,28 @@ public class BaseFragment extends Fragment {
         super.onDetach();
     }
 
-    /**
-     * 跳转到另一个Activity，携带数据
-     * @param context
-     *              上下文
-     * @param cls
-     *              目标类
-     * @param bundle
-     *              数据bundle
-     */
-    public static void goToActivity(Context context, Class<?> cls, Bundle bundle) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
-    }
 
     /**
-     * 启动一个activity
-     *
-     * @param context
-     *            上下文
-     * @param cls
-     *            目标类
+     * 初始化布局
      */
-    public static void goToActivity(Context context, Class<?> cls) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        context.startActivity(intent);
+    protected abstract void setLayout();
+
+    /**
+     * 初始化视图
+     */
+    protected abstract void initView(View view);
+
+    /**
+     * 初始化参数
+     */
+    protected abstract void initData();
+
+    /**
+     * 设置监听对象
+     */
+    protected abstract void setListener();
+    protected void setResLayoutId(int resLayoutId) {
+        this.resLayoutId = resLayoutId;
     }
 
 

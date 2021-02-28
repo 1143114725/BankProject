@@ -1,20 +1,20 @@
-package app.eeh.bank.db.table;
+package com.tools.db.table;
+
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
 
 /**
  * @author EraJieZhang
  * @data 2021-2-15
  */
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class User {
     /**
      * 主键自增长
      */
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     /**
      * 用户名/账号
@@ -52,24 +52,7 @@ public class User {
      * 是否可用 0 不可用  1   可用
      */
     private int enable;
-    @Generated(hash = 1735045514)
-    public User(Long id, String userId, String nickName, String passWord,
-            String bindingQQ, String bindingWeChat, String bindingEmail,
-            String headPortrait, String userMessage, int enable) {
-        this.id = id;
-        this.userId = userId;
-        this.nickName = nickName;
-        this.passWord = passWord;
-        this.bindingQQ = bindingQQ;
-        this.bindingWeChat = bindingWeChat;
-        this.bindingEmail = bindingEmail;
-        this.headPortrait = headPortrait;
-        this.userMessage = userMessage;
-        this.enable = enable;
-    }
-    @Generated(hash = 586692638)
-    public User() {
-    }
+
     public Long getId() {
         return this.id;
     }

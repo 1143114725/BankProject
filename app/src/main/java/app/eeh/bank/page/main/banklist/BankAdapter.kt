@@ -1,10 +1,10 @@
-package app.eeh.bank.page.banklist
+package app.eeh.bank.page.main.banklist
 
 import android.content.Context
 import app.eeh.bank.R
-import app.eeh.bank.db.table.BankCard
 import com.erajie.base.BaseRecyclerAdapter
 import com.erajie.base.RecyclerViewHolder
+import com.tools.db.table.BankCard
 
 /**
  * 银行卡列表adapter
