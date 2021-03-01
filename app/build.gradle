@@ -1,27 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'kotlin-kapt'
 
 android {
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-
-    //配置数据库,配置版本号即可,其他的只需要保持默认
-    greendao {
-        //数据库版本号
-        schemaVersion 1
-        //数据库所在包
-        daoPackage 'app.eeh.bank.db'
-        //生成的数据库文件的目录
-        targetGenDir 'src/main/java'
-        //自动生成单元测试
-        //    generateTests true
-        //生成的单元测试目录
-        //    targetGenDirTests
-    }
-
 
     defaultConfig {
         applicationId "app.eeh.bank"
@@ -58,7 +46,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation project(':RxUtils')
     implementation project(':db')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -80,8 +68,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-
-    implementation 'org.greenrobot:greendao:3.3.0'
 
     implementation 'com.tencent:mmkv:1.2.6'
 

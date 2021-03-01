@@ -2,7 +2,6 @@ package com.erajie.base;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,13 +10,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.R;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * @Description: 所有activity的基类
@@ -34,6 +32,7 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mActivity = this;
+        fragmentManager = getSupportFragmentManager();
 
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -146,101 +145,6 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onRestart();
     }
 
-
-    /**
-     * 延迟去往新的Activity
-     *
-     * @param context
-     *            上下文
-     * @param cls
-     *            目标类
-     * @param delay
-     *            延迟时间
-     * @param bundle
-     *            数据
-     */
-    public static void delayToActivity(final Context context,
-                                       final Class<?> cls, long delay, final Bundle bundle) {
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-
-            @Override
-            public void run() {
-                Intent intent = new Intent();
-                intent.setClass(context, cls);
-                intent.putExtras(bundle);
-                context.startActivity(intent);
-            }
-        }, delay);
-        
-    }
-
-    /**
-     * 跳转到另一个Activity，携带数据
-     *
-     * @param context
-     *            上下文
-     * @param cls
-     *            目标类
-     */
-    public static void goToActivity(Context context, Class<?> cls, Bundle bundle) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
-    }
-
-    /**
-     * 启动一个activity
-     *
-     * @param context
-     *            上下文
-     * @param cls
-     *            目标类
-     */
-    public static void goToActivity(Context context, Class<?> cls) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        context.startActivity(intent);
-    }
-
-    /**
-     * 启动一个startActivityForResult
-     *
-     * @param context
-     *            上下文
-     * @param requestCode
-     *            返回标识
-     * @param cls
-     *            目标类
-     * @param bundle
-     *            数据
-     */
-    public static void goToActivityFor(Context context, int requestCode,
-                                       Class<?> cls, Bundle bundle) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        intent.putExtras(bundle);
-        ((FragmentActivity) context).startActivityForResult(intent, requestCode);
-    }
-    
-    /**
-     * 启动一个startActivityForResult
-     *
-     * @param context
-     *            上下文
-     * @param requestCode
-     *            返回标识
-     * @param cls
-     *            目标类
-     */
-    public static void goToActivityFor(Context context, int requestCode,
-                                       Class<?> cls) {
-        Intent intent = new Intent();
-        intent.setClass(context, cls);
-        ((FragmentActivity) context).startActivityForResult(intent, requestCode);
-    }
-
     @Override
     public void finish() {
         // TODO Auto-generated method stub
@@ -251,6 +155,19 @@ public abstract class BaseActivity extends FragmentActivity {
             inputmanger.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
         super.finish();
+    }
+
+    private FragmentManager fragmentManager;
+    protected void showFragment(int replaceResId, Fragment fragment) {
+        if (fragment != null) {
+            Fragment fragment1 = fragmentManager.findFragmentByTag(fragment.getClass().getName());
+            if (fragment1 != null && fragment1.equals(fragment)) {
+                return;
+            }
+            fragmentManager.beginTransaction()
+                    .replace(replaceResId, fragment, fragment.getClass().getName())
+                    .commitAllowingStateLoss();
+        }
     }
 
  

@@ -3,12 +3,12 @@ package app.eeh.bank.page.edit
 import android.text.TextUtils
 import android.view.View
 import app.eeh.bank.R
-import app.eeh.bank.db.table.BankCard
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.erajie.base.BaseActivity
 import com.erajie.db.dbhelp.OperationBankCard
 import com.erajie.global.ARouterPath
 import com.erajie.rxutils.view.RxToast
+import com.tools.db.table.BankCard
 import kotlinx.android.synthetic.main.edit_bank_layout.*
 
 /**
@@ -36,7 +36,7 @@ class EditBankActivity: BaseActivity() {
          * 提交按钮
          */
         commit.setOnClickListener {
-            var result = getCreditCardMsg()?.let { OperationBankCard.addBankCard(this, it) }
+            var result = getCreditCardMsg()?.let { OperationBankCard.addBankCard(it) }
             if (result != null) {
                 if (result > 0){
                     RxToast.success("保存成功！")
@@ -76,7 +76,7 @@ class EditBankActivity: BaseActivity() {
     /**
      * 设置银行卡信息，并禁止使用edittext
      */
-    private fun setCreditCardMsg(bankCard:BankCard){
+    private fun setCreditCardMsg(bankCard: BankCard){
         group.visibility = View.GONE
 
         et_bank_name.setText(bankCard.bankName)
