@@ -1,0 +1,176 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:198068799031246435",
+      "lastPropertyId": "16:5036845195750663590",
+      "name": "BankCard",
+      "properties": [
+        {
+          "id": "1:7677354376292451308",
+          "name": "id",
+          "type": 6,
+          "flags": 3
+        },
+        {
+          "id": "2:5966295513844246130",
+          "name": "bankName",
+          "type": 9
+        },
+        {
+          "id": "3:1130531998891633899",
+          "name": "bankNumber",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "4:7756728704145059262",
+          "name": "maxLines",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:148040806981531419",
+          "name": "billingData",
+          "type": 9
+        },
+        {
+          "id": "6:7193880651989387429",
+          "name": "payBackData",
+          "type": 9
+        },
+        {
+          "id": "7:2290051775256803937",
+          "name": "cardHolder",
+          "type": 9
+        },
+        {
+          "id": "8:5632431684469481680",
+          "name": "safeCode",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "9:1320317641375155396",
+          "name": "effectiveData",
+          "type": 9
+        },
+        {
+          "id": "10:2267013385469190086",
+          "name": "annualFeeRules",
+          "type": 9
+        },
+        {
+          "id": "11:3970701831582919355",
+          "name": "nowDebt",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "12:3882553221231602196",
+          "name": "hasBill",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "13:4209743262121539044",
+          "name": "negtiveBill",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "14:7347709040195519462",
+          "name": "minLines",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "15:626541792929623058",
+          "name": "enable",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:5036845195750663590",
+          "name": "userId",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:5575550939610848999",
+      "lastPropertyId": "10:4490875114541574432",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:6743701041459849076",
+          "name": "id",
+          "type": 6,
+          "flags": 3
+        },
+        {
+          "id": "2:4177857356228803263",
+          "name": "userId",
+          "type": 9
+        },
+        {
+          "id": "3:6136017271470545203",
+          "name": "nickName",
+          "type": 9
+        },
+        {
+          "id": "4:3284544129331101188",
+          "name": "passWord",
+          "type": 9
+        },
+        {
+          "id": "5:7772196741992775522",
+          "name": "bindingQQ",
+          "type": 9
+        },
+        {
+          "id": "6:4506888613933307597",
+          "name": "bindingWeChat",
+          "type": 9
+        },
+        {
+          "id": "7:3441635863381186725",
+          "name": "bindingEmail",
+          "type": 9
+        },
+        {
+          "id": "8:1927414398325988430",
+          "name": "headPortrait",
+          "type": 9
+        },
+        {
+          "id": "9:5586739149371158305",
+          "name": "userMessage",
+          "type": 9
+        },
+        {
+          "id": "10:4490875114541574432",
+          "name": "enable",
+          "type": 5,
+          "flags": 4
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:5575550939610848999",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

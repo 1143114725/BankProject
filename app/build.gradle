@@ -49,6 +49,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation project(':RxUtils')
     implementation project(':db')
+
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     //下拉刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
@@ -73,7 +74,11 @@ dependencies {
 
     implementation 'com.alibaba:arouter-api:1.4.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
-
     kapt 'com.alibaba:arouter-compiler:1.2.1'
 
+    debugImplementation "io.objectbox:objectbox-android-objectbrowser:$objectboxVersion"     //-------》ObjcetBox配置文件
+    releaseImplementation "io.objectbox:objectbox-android:$objectboxVersion"                 //-------》ObjcetBox配置文件
+
+    implementation "io.objectbox:objectbox-kotlin:$objectboxVersion"                         //-------》ObjcetBox配置文件
 }
+apply plugin: 'io.objectbox'
