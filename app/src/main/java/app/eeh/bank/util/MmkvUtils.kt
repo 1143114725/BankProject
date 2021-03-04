@@ -6,7 +6,7 @@ import com.tencent.mmkv.MMKV
 
 /**
  * 初始化MMKV   在Application  String rootDir = MMKV.initialize(this);
- *
+ * 测试一下git 上传
  * @author EraJieZhang
  * @data 2020-12-14
  */
